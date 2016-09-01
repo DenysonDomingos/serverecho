@@ -32,6 +32,7 @@ public class EchoCliente {
             bin = new BufferedReader (new InputStreamReader(System.in));
             cin = new BufferedReader (new InputStreamReader(soc.getInputStream()));
             out = new PrintWriter (new OutputStreamWriter(soc.getOutputStream()));
+            
             do
             {
                 System.out.println("Enter message: ");
