@@ -19,6 +19,7 @@ import java.net.Socket;
 public class EchoServer {
     
     public static void main(String[] args) {
+       
         
         ServerSocket ssoc = null;
         Socket soc = null;
@@ -34,20 +35,8 @@ public class EchoServer {
             while (true)
             {
                soc = ssoc.accept();
-               System.out.println("Client called" + soc);
-               bin = new BufferedReader(new InputStreamReader(System.in));
-               cin = new BufferedReader(new InputStreamReader(soc.getInputStream()));
-               
-               out = new PrintWriter(new OutputStreamWriter(soc.getOutputStream()));
-               do
-               {
-                   str = cin.readLine();
-                   System.out.println("Received Client: " + str);
-                   out.println(str.toUpperCase());
-                   out.flush();
-               }
-               while ( !(str.equalsIgnoreCase("bye")));
-               
+               EchoControlServer echoserver = new EchoControlServer(soc);
+               echoserver.start();        
             }
         }
         catch(Exception ee)
