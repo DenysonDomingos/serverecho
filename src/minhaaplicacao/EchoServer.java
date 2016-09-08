@@ -36,7 +36,13 @@ public class EchoServer {
             {
                soc = ssoc.accept();
                EchoControlServer echoserver = new EchoControlServer(soc);
-               echoserver.start();        
+               echoserver.start();
+               
+//               Echo12 e1 = new Echo12();
+//               Echo2 e2 = new Echo2();
+//               
+//               e1.start();
+//               e2.start();
             }
         }
         catch(Exception ee)
