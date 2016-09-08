@@ -28,6 +28,7 @@ public class EchoControlServer extends Thread{
     
     public EchoControlServer (Socket soc){
         this.soc = soc;
+        
     }
     
     @Override
